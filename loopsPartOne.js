@@ -22,7 +22,7 @@
     Remember to Save the file before you click Run Code!
 */
 
-
+ 
 let arr = [];
 arr[2] = "c";
 arr[0] = "a";
