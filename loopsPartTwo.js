@@ -24,9 +24,12 @@
 */
 
 function addExerciseToRoutineForLoop(routine, exercise, numRepetitions) {
-    // Your Code Here!  Use a For loop, not a for-of loop.
+    for (let i = 0; i < numRepetitions; i++){
+        routine.push(exercise)
+    }
 }
 
+// routine.push(exercise) -- if you want to do it once
 /* 
    -------TESTS---------------------------------------------------------------
    Run these commands to make sure you did it right. They should all be true.
@@ -61,9 +64,15 @@ console.log(compareArray(routineOne, ["situp", "situp", "situp", "situp", "pushu
 */
 
 function findMinimumAndMaximum(schedule) {
-    let min = Number.POSITIVE_INFINITY;
-    let max = 0;
-    // Your Code Here!
+    let min = schedule [0];
+    let max = schedule[0];
+    for(let index = 0; index < schedule.length; index++){
+        if (schedule[index]>= max){
+            max = schedule[index];
+        } else if(schedule[index] < min){
+            min = schedule[index];
+        }
+    }
     return [min, max];
 }
 
@@ -133,7 +142,16 @@ console.log(result[0] == 0 && result[1] == 10);
 
 function convertRoutineFromNewFormat(routineString) {
     let routine = [];
-    // Your Code Here!
+    let result = [];
+    routine = routineString.split("|");
+        for (let set of routine){
+            setArray = set.split(":");
+            let numOfReps = setArray[O];
+            let exercise = setArray[1];
+            for(let i=0; i < numOfReps; i++){                   
+                result.push(exercise);
+            }
+        }
     return routine;
 }
 
@@ -202,7 +220,12 @@ console.log(compareArray(routineThree, [
 
 function calculateRoutineDifficulty(routine) {
     let difficulty = "";
-    // Your Code Here!
+    for(let index = 0; index < routine.length; index++){
+        if (routine === "situp"){
+    
+        }
+        
+    }
     return difficulty;
 }
 
