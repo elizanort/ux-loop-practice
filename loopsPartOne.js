@@ -224,16 +224,7 @@ function removeExerciseFromRoutine(routine, exercise) {
             index++;
         }
     }
-    
-    // for(let i = 0; i < routine.length; i++) {
-    //     if(routine[i] === exercise) {
-    //         routine.splice(i,1);
-    //     }
-    // }
-    // while (routine.includes(exercise)){
-    //     routine.splice(exercise, 1);
-    //     exercise ++;
-    // }
+
 }
 
 

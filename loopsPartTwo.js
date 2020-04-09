@@ -146,13 +146,13 @@ function convertRoutineFromNewFormat(routineString) {
     routine = routineString.split("|");
         for (let set of routine){
             setArray = set.split(":");
-            let numOfReps = setArray[O];
-            let exercise = setArray[1];
-            for(let i=0; i < numOfReps; i++){                   
+            let numOfReps = setArray[0]
+            let exercise = setArray[1]
+            for(let i = 0; i < numOfReps; i++){                   
                 result.push(exercise);
             }
         }
-    return routine;
+    return result;
 }
 
 /* 
@@ -220,11 +220,28 @@ console.log(compareArray(routineThree, [
 
 function calculateRoutineDifficulty(routine) {
     let difficulty = "";
-    for(let index = 0; index < routine.length; index++){
-        if (routine === "situp"){
+    let exercisePoints = 0;
     
+    
+    for(let index = 0; index < routine.length; index++){
+        let exercise = routine[index];
+        if (exercise === "situp"){
+            exercisePoints += 1
+        } else if (exercise === "legraise"){
+            exercisePoints += 2
+        } else if (exercise === "pushup"){
+            exercisePoints += 4
+        } else if (exercise === "pullup"){
+            exercisePoints += 10
         }
-        
+
+        if(exercisePoints < 30 ){
+            difficulty = "Easy"
+        } else if (exercisePoints >= 30 && exercisePoints < 60){
+            difficulty = "Hard"
+        } else if (exercisePoints >= 60){
+            difficulty = "Insane"
+        }  
     }
     return difficulty;
 }
